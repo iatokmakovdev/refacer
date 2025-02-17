@@ -8,6 +8,7 @@ parser.add_argument("--force_cpu", help="Force CPU mode", default=False, action=
 parser.add_argument("--colab_performance", help="Use in colab for better performance", default=False,action="store_true")
 parser.add_argument("--face", help="Face to replace (ex: <src>,<dst>,<thresh=0.2>)", nargs='+', action="append", required=True)
 parser.add_argument("--video", help="Video to parse", required=True)
+program.add_argument('--frame-processor', help='frame processors (choices: face_swapper, face_enhancer, ...)', dest='frame_processor', default=['face_swapper'], nargs='+')
 args = parser.parse_args()
 
 refacer = Refacer(force_cpu=args.force_cpu,colab_performance=args.colab_performance)
